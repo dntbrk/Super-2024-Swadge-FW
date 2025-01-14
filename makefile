@@ -293,8 +293,8 @@ ifeq ($(HOST_OS),Linux)
 LIBRARY_FLAGS += \
 	-fsanitize=address \
 	-fsanitize=bounds-strict \
-	-fno-omit-frame-pointer \
-	-static-libasan
+	-fno-omit-frame-pointer# \
+	#-static-libasan
 ifeq ($(ENABLE_GCOV),true)
     LIBRARY_FLAGS += -lgcov -fprofile-arcs -ftest-coverage
 endif

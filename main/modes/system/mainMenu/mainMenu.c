@@ -16,6 +16,7 @@
 #include "jukebox.h"
 #include "mainMenu.h"
 #include "modeTimer.h"
+#include "cheersTimer.h"
 #include "mode_credits.h"
 #include "mode_bigbug.h"
 #include "mode_swadgeHero.h"
@@ -195,6 +196,7 @@ static void mainMenuEnterMode(void)
     addSingleItemToMenu(mainMenu->menu, gamepadMode.modeName);
     addSingleItemToMenu(mainMenu->menu, danceMode.modeName);
     addSingleItemToMenu(mainMenu->menu, timerMode.modeName);
+    addSingleItemToMenu(mainMenu->menu, cheersTimerMode.modeName);
     addSingleItemToMenu(mainMenu->menu, introMode.modeName);
     mainMenu->menu = endSubMenu(mainMenu->menu);
 
@@ -438,6 +440,10 @@ static void mainMenuCb(const char* label, bool selected, uint32_t settingVal)
         else if (label == timerMode.modeName)
         {
             switchToSwadgeMode(&timerMode);
+        }
+        else if (label == cheersTimerMode.modeName)
+        {
+            switchToSwadgeMode(&cheersTimerMode);
         }
         else if (label == touchTestMode.modeName)
         {
